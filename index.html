@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/main.css" />
+		<title>GSAP</title>
+	</head>
+	<body>
+		<main>
+			<section>
+				<h1>Engineering For Tomorrow</h1>
+				<button class="play">play</button> <button class="pause">pause</button>
+			</section>
+
+			<section>
+				<div class="panel">
+					<img src="images/bulb.svg" class="light" />
+					<p>
+						Some great line about engineering and how we did something everyone
+						will love.
+					</p>
+					<div class="panel__box"></div>
+				</div>
+			</section>
+		</main>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TimelineMax.min.js"></script>
+
+		<script>
+			window.addEventListener('DOMContentLoaded', () => {
+				// DOM
+				const play = document.querySelector('.play')
+				const pause = document.querySelector('.pause')
+
+				// Triggers
+				play.addEventListener('click', playAnimation)
+				pause.addEventListener('click', pauseAnimation)
+
+				// GSAP
+				let tl = new TimelineMax({
+					paused: true,
+				})
+
+				tl.to('.panel', 1.5, {
+					scaleY: 1,
+					height: '100vh',
+					ease: Circ.easeOut,
+				})
+				tl.to('.light', 1, {
+					opacity: 1,
+					y: 0,
+					delay: 1,
+					ease: Back.easeOut.config(1.7),
+				})
+				tl.to('p', 1, {
+					opacity: 1,
+					y: 20,
+				})
+				tl.to(
+					'.panel__box',
+					3,
+					{
+						opacity: 1,
+						scale: 1,
+						ease: Elastic.easeOut.config(1, 0.3),
+					},
+					'-=3.5'
+				)
+				tl.reversed(true)
+
+				// Functions
+				function playAnimation() {
+					tl.reversed(!tl.reversed())
+
+					if (tl.reversed()) {
+						tl.reverse()
+					} else {
+						tl.play()
+					}
+				}
+
+				function pauseAnimation() {
+					if (tl.paused()) {
+						tl.play()
+					} else {
+						tl.pause()
+						tl.paused(true)
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

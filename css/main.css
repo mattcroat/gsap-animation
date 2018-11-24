@@ -1,0 +1,152 @@
+body {
+  font-family: 'Montserrat';
+  padding: 9em;
+  background: goldenrod;
+}
+
+h1 {
+  font-size: 5em;
+  width: 25%;
+  color: #000;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+button {
+  background: none;
+  border: 1px solid black;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 1.7em;
+  padding: .5em 1em;
+  cursor: pointer;
+}
+
+.panel {
+  position: absolute;
+  width: 50%;
+  bottom: 0;
+  right: 0;
+  background: #eaeaea;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding-top: 12%;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+.panel img {
+  width: 240px;
+  float: left;
+  margin-right: 1.2em;
+  opacity: 0;
+  -webkit-transform: translateY(-200px);
+          transform: translateY(-200px);
+}
+
+.panel p {
+  font-size: 1.9em;
+  width: 80%;
+  opacity: 0;
+  margin-top: 60px;
+}
+
+.panel__box {
+  border: 5px solid lightgray;
+  width: 65%;
+  height: 40%;
+  position: absolute;
+  left: -7%;
+  top: 15%;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+@media screen and (max-width: 1400px) {
+  body {
+    padding: 5em;
+  }
+  h1 {
+    margin-top: 2em;
+  }
+  .panel {
+    width: 40%;
+    padding-top: 15.5%;
+  }
+  .panel img {
+    width: 200px;
+    margin: 0;
+  }
+  .panel p {
+    font-size: 1.4em;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  body {
+    padding: 3em;
+  }
+  h1 {
+    font-size: 4em;
+    margin-top: 2.5em;
+  }
+  button {
+    font-size: 1.4em;
+  }
+  .panel {
+    width: 40%;
+    padding-top: 15.5%;
+  }
+  .panel img {
+    width: 150px;
+    float: none;
+    margin: 0 0 0 15px;
+  }
+  .panel p {
+    font-size: 1em;
+    margin: 0 0 0 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding: 4em;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  button {
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding: 2em;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+  button {
+    font-size: .6em;
+  }
+  .panel {
+    padding: 40% 0;
+  }
+  .panel img {
+    width: 80px;
+    float: none;
+    margin-left: 5px;
+  }
+  .panel p {
+    font-size: 0.6em;
+    margin-top: -20px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
